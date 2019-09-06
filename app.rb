@@ -23,7 +23,6 @@ post '/' do
 		erb 'Access denied'
 	end
 
-
 end
 
 
@@ -37,16 +36,16 @@ end
 
 post '/visit' do
 
-
 	@username  = params[:username]
 	@phone     = params[:phone]
 	@datetime  = params[:datetime]
+	@person    = params[:person]
 
 	@title = 'Thank you!'
 	@message = "Dear #{@username}, we'll be waiting for you at #{@datetime}"
 
 	f = File.open './public/users.txt', 'a'
-	f.write "User: #{@username}, Phone: #{@phone}, Date and time: #{@datetime}\n"
+	f.write "User: #{@username}, Phone: #{@phone}, Date and time: #{@datetime}, Person: #{@person}\n"
 	f.close
 
 	erb :message
