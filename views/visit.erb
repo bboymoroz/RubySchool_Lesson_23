@@ -6,22 +6,22 @@
 
   <div class="form-group">
     <label>Ваше имя</label>
-    <input name="username" type="text" class="form-control" id="exampleInputEmail1" placeholder="Введите ваше имя">
+    <input id="aaa" name="username" type="text" class="form-control" id="exampleInputEmail1" placeholder="Введите ваше имя">
   </div>
 
   <div class="form-group">
     <label>Ваш телефон</label>
-    <input name="phone" type="text" class="form-control" id="exampleInputEmail1" placeholder="Введите ваш телефон">
+    <input id="bbb" name="phone" type="text" class="form-control" id="exampleInputEmail1" placeholder="Введите ваш телефон">
   </div>
 
   <div class="form-group">
     <label>Когда вас ждать?</label>
-    <input name="datetime" type="text" class="form-control" id="exampleInputEmail1" placeholder="Введите дату и время">
+    <input name="datetime" type="text" class="form-control ccc" id="exampleInputEmail1" placeholder="Введите дату и время">
   </div>
 
   <div class="form-group">
       <label>Ваш парикмахер</label>
-      <select name="person" class="form-control">
+      <select name="person" class="form-control ccc">
         <option>Jessie Pinkman</option>
         <option>Walter White</option>
         <option>Gus Fring</option>
@@ -32,3 +32,9 @@
   <button type="submit" class="btn btn-primary">Записаться</button>
 
 </form>
+
+<script type="text/javascript">
+  $('#aaa').css('background-color', 'yellow');
+  $('#bbb').css('background-color', 'red');
+  $('.ccc').css('background-color', 'blue');
+</script>
