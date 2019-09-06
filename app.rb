@@ -25,7 +25,6 @@ post '/' do
 
 end
 
-
 get '/about' do
 	erb :about
 end
@@ -40,12 +39,13 @@ post '/visit' do
 	@phone     = params[:phone]
 	@datetime  = params[:datetime]
 	@person    = params[:person]
+	@color 	   = params[:color]	
 
 	@title = 'Thank you!'
 	@message = "Dear #{@username}, we'll be waiting for you at #{@datetime}"
 
 	f = File.open './public/users.txt', 'a'
-	f.write "User: #{@username}, Phone: #{@phone}, Date and time: #{@datetime}, Person: #{@person}\n"
+	f.write "User: #{@username}, Phone: #{@phone}, Date and time: #{@datetime}, Person: #{@person}, #{@color}\n"
 	f.close
 
 	erb :message
