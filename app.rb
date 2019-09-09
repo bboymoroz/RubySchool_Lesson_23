@@ -3,27 +3,34 @@ require 'rubygems'
 require 'sinatra'
 require 'sinatra/reloader'
 
-get '/' do
-	erb "Hello! <a href=\"https://github.com/bootstrap-ruby/sinatra-bootstrap\">Original</a> pattern has been modified for <a href=\"http://rubyschool.us/\">Ruby School</a>"			
+
+get '/login' do
+	erb :login
 end
 
-post '/' do
+post '/login' do
 
 	@login = params[:login]
 	@password = params[:password]
 	
 
 	if @login == 'admin' && @password == 'secret'
-		erb "Hello!"
+		erb "Hello! <a href=\"https://github.com/bootstrap-ruby/sinatra-bootstrap\">Original</a> pattern has been modified for <a href=\"http://rubyschool.us/\">Ruby School</a>"
 
 	elsif @login == 'admin' && @password == 'admin'
-		erb 'Haha, nice try! Access denied!'
+		erb :message
 
 	else
-		erb 'Access denied'
+		erb :message
 	end
 
 end
+
+
+get '/' do
+	erb "Hello! <a href=\"https://github.com/bootstrap-ruby/sinatra-bootstrap\">Original</a> pattern has been modified for <a href=\"http://rubyschool.us/\">Ruby School</a>"			
+end
+
 
 get '/about' do
 	erb :about
